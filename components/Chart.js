@@ -27,7 +27,7 @@ const Chart = ({ chartPrices, containerStyle }) => {
     : []
 
   // Smooth curve
-  let points = monotoneCubicInterpolation({ data, range: 40 })
+  let points = monotoneCubicInterpolation({ data, range: 50 })
 
   const formatUSD = (value) => {
     'worklet'
