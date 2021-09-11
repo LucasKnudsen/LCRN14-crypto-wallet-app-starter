@@ -13,7 +13,6 @@ import {
 import moment from 'moment'
 
 import { SIZES, COLORS, FONTS } from '../constants'
-import { color } from 'react-native-reanimated'
 
 const Chart = ({ chartPrices, containerStyle }) => {
   let startUnixTimestamp = moment().subtract(7, 'day').unix()
@@ -100,7 +99,7 @@ const Chart = ({ chartPrices, containerStyle }) => {
         }}>
         {getYAxisLabelValues().map((item, index) => {
           return (
-            <Text key={index} style={{ color: COLORS.lightGray3, ...FONTS.body4 }}>
+            <Text key={index} style={{ color: COLORS.white, ...FONTS.body4 }}>
               {item}
             </Text>
           )

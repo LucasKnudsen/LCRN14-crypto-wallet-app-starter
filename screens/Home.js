@@ -8,7 +8,7 @@ import { BalanceInfo, Chart, IconTextButton } from '../components'
 
 const Home = () => {
   const { marketReducer } = useSelector((state) => state)
-  const { myHoldings, coins, configureStore, error, loading } = marketReducer
+  const { myHoldings, coins } = marketReducer
   const [selectedCoin, setSelectedCoin] = useState(null)
 
   useEffect(() => {
@@ -72,7 +72,9 @@ const Home = () => {
         <Chart
           containerStyle={{ marginTop: SIZES.padding * 2 }}
           chartPrices={
-            selectedCoin ? selectedCoin?.sparkline_in_7d?.price : coins[0]?.sparkline_in_7d?.price
+            selectedCoin
+              ? selectedCoin?.sparkline_in_7d?.price
+              : coins && coins[0]?.sparkline_in_7d?.price
           }
         />
 
